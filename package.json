@@ -1,0 +1,19 @@
+{
+  "name": "playwright-test-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Web-UI: aus einer Beschreibung oder einer URL automatisch Playwright-Tests generieren lassen (LLM steuert einen echten Browser).",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.48.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  }
+}

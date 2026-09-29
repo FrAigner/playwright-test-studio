@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Playwright Test Studio</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<header>
+  <h1>Playwright Test Studio</h1>
+  <p class="subtitle">Beschreibe, was getestet werden soll – ein KI-Agent steuert einen echten Browser und schreibt dir den Playwright-Test.</p>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="simple">Einfach</button>
+  <button class="tab-btn" data-tab="advanced">Advanced: Testplan</button>
+  <button class="tab-btn" data-tab="library">Gespeicherte Tests</button>
+</nav>
+
+<main>
+  <section id="tab-simple" class="tab-panel active">
+    <form id="simple-form">
+      <label>Ziel-URL
+        <input type="url" name="url" placeholder="https://beispiel-shop.de" required />
+      </label>
+      <label>Was soll getestet werden?
+        <textarea name="description" rows="3" placeholder="z.B. Suche im Header nach 'Kaffeemaschine' und prüfe, dass Ergebnisse angezeigt werden." required></textarea>
+      </label>
+      <button type="submit">Test generieren</button>
+    </form>
+    <div id="simple-log" class="log"></div>
+    <div id="simple-result" class="result"></div>
+  </section>
+
+  <section id="tab-advanced" class="tab-panel">
+    <form id="plan-form">
+      <label>Ziel-URL
+        <input type="url" name="url" placeholder="https://beispiel-shop.de" required />
+      </label>
+      <button type="submit">Testplan erstellen</button>
+    </form>
+    <div id="plan-log" class="log"></div>
+    <div id="plan-result"></div>
+  </section>
+
+  <section id="tab-library" class="tab-panel">
+    <button id="refresh-library">Aktualisieren</button>
+    <ul id="library-list"></ul>
+    <pre id="library-code" class="code-box" hidden></pre>
+  </section>
+</main>
+
+<template id="plan-item-template">
+  <div class="plan-item">
+    <label class="plan-item-check">
+      <input type="checkbox" checked />
+      <strong class="plan-item-name"></strong>
+      <span class="badge"></span>
+    </label>
+    <p class="plan-item-desc"></p>
+  </div>
+</template>
+
+<script src="/app.js"></script>
+</body>
+</html>
